@@ -6,147 +6,185 @@
     <title>Square Banking Pro | Everything Your Small Business Needs</title>
     <style>
         :root {
-            --square-blue: #006aff;
-            --square-dark: #1a1a1a;
-            --square-light: #f7f7f7;
+            --square-black: #000000;
+            --square-white: #ffffff;
+            --square-gray: #6b7177;
+            --square-light-gray: #f7f7f7;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Square Sans Text", Helvetica, Arial, sans-serif;
         }
 
         body {
             line-height: 1.6;
-            color: var(--square-dark);
+            color: var(--square-black);
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 2rem;
+            align-items: center;
+            border-bottom: 1px solid #eee;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav a {
+            color: var(--square-black);
+            text-decoration: none;
+            font-size: 0.9rem;
         }
 
         .hero {
-            background-image: linear-gradient(rgba(0, 106, 255, 0.9), rgba(0, 85, 204, 0.9)), 
-                            url('https://images.unsplash.com/photo-1554774853-719586f82d77?w=1200');
+            background: var(--square-black);
+            color: var(--square-white);
+            padding: 8rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                        url('https://images.unsplash.com/photo-1554774853-719586f82d77?w=1200');
             background-size: cover;
             background-position: center;
-            color: white;
-            padding: 4rem 2rem;
-            text-align: center;
+            z-index: 0;
+            opacity: 0.4;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
+            font-size: 4rem;
+            line-height: 1.2;
+            margin-bottom: 2rem;
+            font-weight: 700;
         }
 
-        .hero p {
-            font-size: 1.25rem;
-            max-width: 600px;
-            margin: 0 auto 2rem;
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
         }
 
-        .cta-button {
-            background: white;
-            color: var(--square-blue);
-            padding: 1rem 2rem;
-            border-radius: 8px;
+        .button {
+            padding: 0.8rem 1.5rem;
+            border-radius: 6px;
             text-decoration: none;
-            font-weight: bold;
-            display: inline-block;
-            transition: transform 0.2s;
+            font-weight: 500;
+            font-size: 1rem;
         }
 
-        .cta-button:hover {
-            transform: translateY(-2px);
+        .button-primary {
+            background: var(--square-white);
+            color: var(--square-black);
         }
 
-        .features {
-            padding: 4rem 2rem;
+        .button-secondary {
+            border: 1px solid var(--square-white);
+            color: var(--square-white);
+        }
+
+        .section {
+            padding: 6rem 2rem;
             max-width: 1200px;
             margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            line-height: 1.2;
+            margin-bottom: 4rem;
+            text-align: center;
         }
 
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+            gap: 3rem;
         }
 
         .feature-card {
-            background: white;
             padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
+            background: var(--square-white);
+            border-radius: 8px;
         }
 
         .feature-icon {
-            width: 80px;
-            height: 80px;
-            border-radius: 12px;
-            object-fit: cover;
-            margin-bottom: 1rem;
+            width: 64px;
+            height: 64px;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
         }
 
         .feature-card h3 {
-            color: var(--square-blue);
+            font-size: 1.5rem;
             margin-bottom: 1rem;
+            color: var(--square-black);
         }
 
-        .pricing {
-            background: var(--square-light);
-            padding: 4rem 2rem;
-            text-align: center;
-        }
-
-        .price-tag {
-            font-size: 3rem;
-            color: var(--square-blue);
-            margin: 1rem 0;
+        .feature-card p {
+            color: var(--square-gray);
         }
 
         .testimonials {
-            padding: 4rem 2rem;
-            max-width: 900px;
-            margin: 0 auto;
+            background: var(--square-light-gray);
         }
 
         .testimonial {
-            background: var(--square-light);
+            background: var(--square-white);
             padding: 2rem;
-            border-radius: 12px;
+            border-radius: 8px;
             margin-bottom: 2rem;
             display: flex;
-            align-items: center;
             gap: 2rem;
+            align-items: center;
         }
 
         .testimonial-image {
-            width: 100px;
-            height: 100px;
+            width: 80px;
+            height: 80px;
             border-radius: 50%;
             object-fit: cover;
         }
 
-        .testimonial-content {
-            flex: 1;
-        }
-
         .testimonial-author {
-            font-weight: bold;
-            color: var(--square-blue);
+            margin-top: 1rem;
+            color: var(--square-gray);
         }
 
         @media (max-width: 768px) {
             .hero h1 {
-                font-size: 2rem;
+                font-size: 2.5rem;
             }
             
-            .features-grid {
-                grid-template-columns: 1fr;
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .button-group {
+                flex-direction: column;
             }
 
             .testimonial {
@@ -157,14 +195,31 @@
     </style>
 </head>
 <body>
+    <nav class="nav">
+        <div class="nav-links">
+            <a href="#">Banking</a>
+            <a href="#">Products</a>
+            <a href="#">Pricing</a>
+        </div>
+        <div class="nav-links">
+            <a href="#">Sign in</a>
+            <a href="#">Support</a>
+        </div>
+    </nav>
+
     <section class="hero">
-        <h1>Run Your Business, Not Your Banking</h1>
-        <p>Square Banking automates your finances, giving you more time to focus on growing your business.</p>
-        <a href="#pricing" class="cta-button">Start Banking Smarter</a>
+        <div class="hero-content">
+            <h1>Run Your Business, Not Your Banking</h1>
+            <p>Square Banking automates your finances, giving you more time to focus on growing your business.</p>
+            <div class="button-group">
+                <a href="#" class="button button-primary">Get started</a>
+                <a href="#" class="button button-secondary">Contact sales</a>
+            </div>
+        </div>
     </section>
 
-    <section class="features">
-        <h2>Smart Banking That Works As Hard As You Do</h2>
+    <section class="section">
+        <h2 class="section-title">Smart Banking That Works As Hard As You Do</h2>
         <div class="features-grid">
             <div class="feature-card">
                 <img src="https://images.unsplash.com/photo-1535378917042-10a22c95931a?w=160" 
@@ -217,17 +272,8 @@
         </div>
     </section>
 
-    <section class="pricing" id="pricing">
-        <h2>Pricing That Makes Sense</h2>
-        <div class="price-tag">$15/month</div>
-        <p>First month on us, cancel anytime</p>
-        <p>Perfect for businesses processing up to $125K annually</p>
-        <br>
-        <a href="#" class="cta-button">Try It Risk-Free</a>
-    </section>
-
-    <section class="testimonials">
-        <h2>Real Stories from Business Owners Like You</h2>
+    <section class="section testimonials">
+        <h2 class="section-title">Real Stories from Business Owners Like You</h2>
         <div class="testimonial">
             <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200" 
                  alt="Sarah K." 
