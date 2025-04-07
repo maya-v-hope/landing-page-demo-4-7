@@ -59,12 +59,12 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
-                        url('https://images.unsplash.com/photo-1554774853-719586f82d77?w=1200');
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                        url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200');
             background-size: cover;
             background-position: center;
             z-index: 0;
-            opacity: 0.4;
+            opacity: 0.8;
         }
 
         .hero-content {
@@ -129,23 +129,31 @@
             padding: 2rem;
             background: var(--square-white);
             border-radius: 8px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .feature-icon {
-            width: 64px;
-            height: 64px;
-            border-radius: 8px;
-            margin-bottom: 1.5rem;
+            width: 120px;
+            height: 120px;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            display: block;
+            object-fit: cover;
         }
 
         .feature-card h3 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
             color: var(--square-black);
+            width: 100%;
         }
 
         .feature-card p {
             color: var(--square-gray);
+            width: 100%;
         }
 
         .testimonials {
@@ -192,6 +200,43 @@
                 text-align: center;
             }
         }
+
+        .pricing {
+            background: var(--square-light-gray);
+            text-align: center;
+        }
+
+        .pricing-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .price-tag {
+            font-size: 4rem;
+            font-weight: 700;
+            margin: 2rem 0;
+            color: var(--square-black);
+        }
+
+        .price-description {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--square-gray);
+        }
+
+        .price-detail {
+            color: var(--square-gray);
+            margin-bottom: 2rem;
+        }
+
+        .pricing .button-group {
+            justify-content: center;
+        }
+
+        .pricing .button-primary {
+            background: var(--square-black);
+            color: var(--square-white);
+        }
     </style>
 </head>
 <body>
@@ -209,8 +254,8 @@
 
     <section class="hero">
         <div class="hero-content">
-            <h1>Run Your Business, Not Your Banking</h1>
-            <p>Square Banking automates your finances, giving you more time to focus on growing your business.</p>
+            <h1>Meet Square Banking Pro</h1>
+            <p>Automate your finances so you have more time to grow your business</p>
             <div class="button-group">
                 <a href="#" class="button button-primary">Get started</a>
                 <a href="#" class="button button-secondary">Contact sales</a>
@@ -219,7 +264,7 @@
     </section>
 
     <section class="section">
-        <h2 class="section-title">Smart Banking That Works As Hard As You Do</h2>
+        <h2 class="section-title">Run your business, not your banking</h2>
         <div class="features-grid">
             <div class="feature-card">
                 <img src="https://images.unsplash.com/photo-1535378917042-10a22c95931a?w=160" 
@@ -234,7 +279,7 @@
                      alt="Integration" 
                      class="feature-icon"
                      loading="lazy">
-                <h3>One Home for Your Money</h3>
+                <h3>All in One Place</h3>
                 <p>Your Square Banking dashboard shows everything: sales, expenses, loans, and insights—all working together seamlessly.</p>
             </div>
             <div class="feature-card">
@@ -242,7 +287,7 @@
                      alt="Instant Access" 
                      class="feature-icon"
                      loading="lazy">
-                <h3>Money at the Speed of Now</h3>
+                <h3>Instant Access to Funds</h3>
                 <p>Access your money instantly when you need it. Whether it's today's sales, tomorrow's loan, or next week's payroll—your funds are always ready.</p>
             </div>
             <div class="feature-card">
@@ -268,6 +313,18 @@
                      loading="lazy">
                 <h3>Growth On Your Terms</h3>
                 <p>Instant access to loans when opportunity knocks. No paperwork needed—repayment adjusts automatically with your sales.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section pricing">
+        <h2 class="section-title">Simple, Transparent Pricing</h2>
+        <div class="pricing-content">
+            <div class="price-tag">$15/month</div>
+            <p class="price-description">First month free, cancel anytime</p>
+            <p class="price-detail">Perfect for businesses processing up to $125K annually</p>
+            <div class="button-group">
+                <a href="#" class="button button-primary">Try It Risk-Free</a>
             </div>
         </div>
     </section>
